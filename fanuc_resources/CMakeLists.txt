@@ -1,12 +1,11 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.12)
 
 project(fanuc_resources)
 
-find_package(catkin REQUIRED)
+find_package(ament_cmake REQUIRED)
+ament_package()
 
-catkin_package()
-
-install(DIRECTORY urdf
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-
-install(FILES readme.md DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY rviz urdf
+  DESTINATION share/${PROJECT_NAME})
+install(FILES readme.md
+  DESTINATION share/${PROJECT_NAME})
